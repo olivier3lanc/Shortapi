@@ -9,6 +9,12 @@ body {
     h6 {
         font-family: qtr-font-family(1);
     }
+    a {
+        color: qtr-color();
+        &:hover {
+            color: qtr-color(-2);
+        }
+    }
     section {
         display: flex;
         width: 100%;
@@ -26,9 +32,18 @@ body {
             height: 100vh;
             overflow: auto;
             h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
             p {
                 padding-left: 20px;
                 padding-right: 20px;
+            }
+            code {
+                font-size: qtr-font-size(-2);
+                padding: 1em 2em;
             }
         }
 

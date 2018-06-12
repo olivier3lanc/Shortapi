@@ -35,6 +35,10 @@ body {
   body h5,
   body h6 {
     font-family: "Montserrat", Arial, sans-serif; }
+  body a {
+    color: #2196F3; }
+    body a:hover {
+      color: #0965af; }
   body section {
     display: flex;
     width: 100%; }
@@ -50,8 +54,16 @@ body {
       height: 100vh;
       overflow: auto; }
       body section > .code h1,
+      body section > .code h2,
+      body section > .code h3,
+      body section > .code h4,
+      body section > .code h5,
+      body section > .code h6,
       body section > .code p {
         padding-left: 20px;
         padding-right: 20px; }
+      body section > .code code {
+        font-size: 14.6666666667px;
+        padding: 1em 2em; }
 
 /*# sourceMappingURL=starter.css.map */
