@@ -26,9 +26,17 @@ Set a default transition time for your project.
 */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 @import url("https://fonts.googleapis.com/css?family=Maven Pro");
-body #container {
-  width: 100%;
-  height: 100%;
-  position: absolute; }
+body section {
+  display: flex;
+  width: 100%; }
+  body section > .forge {
+    position: relative;
+    width: 60%; }
+    body section > .forge > #container {
+      width: 100%;
+      height: 100%;
+      position: absolute; }
+  body section > .code {
+    width: 40%; }
 
 /*# sourceMappingURL=starter.css.map */
