@@ -1,5 +1,3 @@
-Shortapi | Helper for ForgeJS     
-
 # Shortapi
 
 A web designer helper for [ForgeJS](https://forgejs.org)
