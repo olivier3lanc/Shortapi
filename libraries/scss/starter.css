@@ -1,0 +1,34 @@
+/**
+* ----------------------------------------------
+*   USER SETTINGS
+* ----------------------------------------------
+*/
+/**
+PRIMARY COLOR
+---
+A CSS value. Set it and obtain SASS variables with assorted color combinations
+that allows to maintain enhanced readability.
+*/
+/**
+BREAK POINTS
+---
+Quikster supports 5 screen widths: Extra-small, small, medium, large and extra-large.
+*/
+/**
+DEFAULT TRANSITION TIME
+---
+Set a default transition time for your project.
+*/
+/**
+* ----------------------------------------------
+*   DO NOT EDIT ANYTHING BELOW THIS LINE
+* ----------------------------------------------
+*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Maven Pro");
+body #container {
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+
+/*# sourceMappingURL=starter.css.map */

@@ -1,0 +1,90 @@
+{
+    "view":
+    {
+        "type": "GoPro"
+    },
+    "controllers":
+    {
+        "instances":
+        [
+            {
+                "uid": "pointer",
+                "type": "pointer",
+                "options":
+                {
+                    "orientation": {
+                        "drag": true
+                    },
+                    "zoom": {
+                        "toPointer": true
+                    },
+                    "fullscreen": false
+                }
+            },
+            {
+                "uid": "keyboard",
+                "type": "keyboard"
+            }
+        ]
+    },
+
+    "history":
+    {
+        "enabled": false
+    },
+
+    "camera":
+    {
+        "instances":
+        [
+            {
+                "uid": "pointer",
+                "type": "pointer",
+                "options":
+                {
+                    "orientation": {
+                        "drag": true
+                    }
+                }
+            }
+        ]
+    },
+
+    "viewer":
+    {
+        "webgl":
+            {
+                "preserveDrawingBuffer": true
+            }
+    },
+
+    "story":
+    {
+        "uid": "start",
+        "name": "Starter",
+        "slug": "story-start",
+        "description": "Description",
+        "default": "01",
+
+        "scenes":
+        [
+            {
+                "uid": "01",
+                "name": "Name 01",
+                "slug": "slug-01",
+
+                "media":
+                {
+                    "uid": "media-0",
+                    "type": "image",
+
+                    "source":
+                    {
+                        "format": "equi",
+                        "url": "img/equis/monal.jpg"
+                    }
+                }
+            }
+        ]
+    }
+}

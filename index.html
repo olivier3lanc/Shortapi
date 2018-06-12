@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Shortapi | Friendly API for ForgeJS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="A web designer friendly API for ForgeJS">
+        <link rel="stylesheet" href="libraries/normalize/normalize.css">
+        <link rel="stylesheet" href="libraries/scss/starter.css">
+    </head>
+    <body>
+        <div id="container"></div>
+
+        <!-- Include the threejs custom build -->
+        <script src="libraries/three.js/three.r86.custom.min.js"></script>
+
+        <!-- Include the Hammer.js library -->
+        <script src="libraries/hammer.js/hammer.min.js"></script>
+
+        <!-- Include the ForgeJS library -->
+        <!-- <script type="text/javascript" src="libraries/forge/forge.min.0.9.5.js"></script> -->
+        <script type="text/javascript" src="libraries/forge/forge.min.0.9.5.js"></script>
+
+        <!-- Start ForgeJS -->
+        <script type="text/javascript">
+            // Create a viewer
+            var viewer = new FORGE.Viewer("container", "config.json");
+        </script>
+
+        <!-- Shortapi for ForgeJS -->
+        <script type="text/javascript" src="libraries/forge/shortapi.min.js"></script>
+
+        <!-- My functions -->
+        <script type="text/javascript" src="libraries/app/functions.js"></script>
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="libraries/jquery/jquery-3.3.1.min.js"></script>
+
+        <!-- Only for dev -->
+        <script type="text/javascript" src="libraries/app/dev.js"></script>
+    </body>
+</html>
