@@ -1,4 +1,5 @@
 var shortapi = {
+
     /**
     * Simply returns the current FOV
     * @return number
@@ -6,6 +7,7 @@ var shortapi = {
     getFov: function(){
         return viewer.camera.fov;
     },
+
     /**
     * Simply returns the current YAW
     * @return number
@@ -13,6 +15,7 @@ var shortapi = {
     getYaw: function(){
         return viewer.camera.yaw;
     },
+
     /**
     * Simply returns the current PITCH
     * @return number
@@ -20,6 +23,7 @@ var shortapi = {
     getPitch: function(){
         return viewer.camera.pitch;
     },
+
     /**
     * Simply returns the current scene UID
     * @return string
@@ -27,6 +31,7 @@ var shortapi = {
     getCurrentSceneUid: function(){
         return viewer.story.sceneUid;
     },
+
     /**
     * Simply returns the current scene view type (projection)
     * @return string
@@ -34,6 +39,7 @@ var shortapi = {
     getProjection: function(){
         return viewer.view.type;
     },
+
     /**
     * Simply returns an object with hotspots on the current scene
     * @return object
@@ -42,6 +48,7 @@ var shortapi = {
         var currentSceneUid = this.getCurrentSceneUid();
         return FORGE.UID.get(currentSceneUid).config.hotspots;
     },
+
     /**
     * Simply returns the UID of the next scene
     * @return string if elligible
@@ -50,6 +57,7 @@ var shortapi = {
     getNextSceneUid: function(){
         return this.getPreviousNextUid().nextSceneUid;
     },
+
     /**
     * Simply returns the UID of the previous scene
     * @return string if elligible
@@ -58,6 +66,7 @@ var shortapi = {
     getPreviousSceneUid: function(){
         return this.getPreviousNextUid().previousSceneUid;
     },
+
     /**
     * Simply returns an object with current scene UID, next scene UID, previous scene UID
     * Returns previousSceneUid = false if it is the first story scene
@@ -100,6 +109,7 @@ var shortapi = {
             }
         }
     },
+
     /**
     * Returns the hotspot type of the specified UID string
     * @param {data} string uid of a hotspot
@@ -113,6 +123,7 @@ var shortapi = {
             return false;
         }
     },
+
     /**
     * Get the world coordinates of a hotspot
     * @param {data} string the uid of the hotspot
@@ -130,6 +141,7 @@ var shortapi = {
             return false;
         }
     },
+
     /**
     * Get the screen left / top values of the world object
     * @param {data} object For example {yaw: 50, pitch: 0}
@@ -163,6 +175,7 @@ var shortapi = {
         //Return left and top values into an object
         return result;
     },
+
     /**
     * Returns the class name of the specified UID (Hotspot3D, HotspotDOM, Story, Action, Playlist...)
     * @param {data} string uid of an element
@@ -176,6 +189,7 @@ var shortapi = {
             console.log('not a valid uid or not supported');
         }
     },
+
     /**
     * Returns the current locale UID
     * @return {String} UID of the current locale (returns "" if i18n is disabled)
@@ -183,6 +197,7 @@ var shortapi = {
     getLocale: function(){
         return viewer.i18n.locale;
     },
+
     /**
     * Returns the description of the current object UID or the current scene description
     * @param {data} string (optional) uid of an element
@@ -200,6 +215,7 @@ var shortapi = {
             return FORGE.UID.get(this.getCurrentSceneUid()).description;
         }
     },
+
     /**
     * Returns the title (name) of the current object UID or the current scene title (name)
     * @param {data} string (optional) uid of an element
@@ -217,6 +233,7 @@ var shortapi = {
             return FORGE.UID.get(this.getCurrentSceneUid()).name;
         }
     },
+
     /**
     * Returns an object with current playlists informations
     * @return {Object} with { name: "Playlist name sting", [Array of audiotracks names]}
@@ -240,6 +257,7 @@ var shortapi = {
     //     return currentPlaylist;
     // },
 
+
     /**
     * Asks for the type of media into the current scene
     * @return {String} for example 'image' or 'video'
@@ -247,6 +265,7 @@ var shortapi = {
     getMediaType: function(){
         return FORGE.UID.get(this.getCurrentSceneUid()).media.type;
     },
+
     /**
     * Get the current volume of the specified source
     * @param    {String} data Specify the volume source to return: 'master', 'scene' or 'playlist'
@@ -267,6 +286,7 @@ var shortapi = {
             console.log('must be a string:"master", "playlist" or "scene"');
         }
     },
+
     /**
     * If the current scene is a video, get the current volume
     * @return {Number} Level between 0 and 1
@@ -278,6 +298,7 @@ var shortapi = {
             console.log('current scene does not support volume');
         }
     },
+
     /**
     * If the current scene is a video, get the duration in seconds
     * @return {Number} in seconds
@@ -289,6 +310,7 @@ var shortapi = {
             console.log('current scene is not a video, cannot return duration');
         }
     },
+
     /**
     * If the current scene is a video, get the current time in seconds
     * @return {Number} in seconds
@@ -300,6 +322,7 @@ var shortapi = {
             console.log('current scene is not a video, cannot return current time');
         }
     },
+
     /**
     * Set the specified locale UID
     * @param {String} UID of the target locale
@@ -307,6 +330,7 @@ var shortapi = {
     setLocale: function(data){
         viewer.i18n.locale = data;
     },
+
     /**
     * Set the specified projection (Rectilinear,flat,gopro)
     * @param {String} projection projection name
@@ -316,6 +340,7 @@ var shortapi = {
             viewer.view.type = data;
         }
     },
+
     /**
     * If the current scene is a video, set the volume
     * @param {Number} volume value between 0 (mute) and 1 (max)
@@ -339,6 +364,7 @@ var shortapi = {
             console.log('current scene does not support volume change');
         }
     },
+
     /**
     * Adjust the volume of the specified audio output (master by default)
     * @param {Number || String} volume value between 0 (mute) and 1 (max)
@@ -441,6 +467,7 @@ var shortapi = {
             console('volume must be a number between 0 and 1');
         }
     },
+
     /**
     * Go the the specified scene uid
     * Optional transition effect based on CSS:
@@ -600,6 +627,7 @@ var shortapi = {
             return;
         }
     },
+
     /**
     * if current scene is a video, play the video
     */
@@ -608,6 +636,7 @@ var shortapi = {
             viewer.story.scene.media.displayObject.play();
         }
     },
+
     /**
     * if current scene is a video, pause the video
     */
@@ -616,6 +645,7 @@ var shortapi = {
             viewer.story.scene.media.displayObject.pause();
         }
     },
+
     /**
     * if current scene is a video, stop the video
     */
@@ -624,30 +654,35 @@ var shortapi = {
             viewer.story.scene.media.displayObject.stop();
         }
     },
+
     /**
     * Play current playlist
     */
     playPlaylist: function(){
         viewer.playlists.playlist.play();
     },
+
     /**
     * Stop current playlist
     */
     stopPlaylist: function(){
         viewer.playlists.playlist.stop();
     },
+
     /**
     * Pause current playlist
     */
     pausePlaylist: function(){
         viewer.playlists.playlist.pause();
     },
+
     /**
     * Resume current playlist
     */
     resumePlaylist: function(){
         viewer.playlists.playlist.resume();
     },
+
     /**
     * Jump Forge to the next scene
     * @param {Object || Boolean} options (optional) Optional parameters
@@ -669,6 +704,7 @@ var shortapi = {
             this.goToScene(nextSceneUid,options);
         }
     },
+
     /**
     * Jump Forge to the previous scene
     * @param {Object || Boolean} options (optional) Optional parameters
@@ -690,6 +726,7 @@ var shortapi = {
             this.goToScene(previousSceneUid,options);
         }
     },
+
     /**
     * Jump Forge to the first scene
     * @param {Object || Boolean} options (optional) Optional parameters
@@ -714,6 +751,7 @@ var shortapi = {
             this.goToScene(firstSceneUid,options);
         }
     },
+
     /**
     * Jump Forge to the last scene
     * @param {Object || Boolean} options (optional) Optional parameters
@@ -739,6 +777,7 @@ var shortapi = {
             }
         }
     },
+
     /**
     * Go the the specified view into the current scene
     * @param {Object} data containing parameters to be changed
@@ -802,6 +841,7 @@ var shortapi = {
         //Launch the tweening
         viewer.camera.lookAt(params.yaw, params.pitch, params.roll, params.fov, params.durationMS, params.cancelRoll, params.easing);
     },
+
     /**
     * Asks if the specified string is a valid uid of a Hotspot3D in the current scene
     * @param {data} string uid of the Hotspot3D
@@ -814,6 +854,7 @@ var shortapi = {
             return false;
         }
     },
+
     /**
     * Asks if the specified string is a valid uid of a HotspotDOM in the current scene
     * @param {data} string uid of the HotspotDOM
@@ -826,6 +867,7 @@ var shortapi = {
             return false;
         }
     },
+
     /**
     * Asks if the specified string is a valid uid of a scene
     * @param {data} string uid of the scene
@@ -844,6 +886,7 @@ var shortapi = {
             return false;
         }
     },
+
     /**
     * Asks if the specified string is the last scene of the story
     * @param {data} string - optional - UID of the scene. If not specified, current scene UID is used
@@ -872,6 +915,7 @@ var shortapi = {
             }
         }
     },
+
     /**
     * Asks if the specified string is the first scene of the story
     * @param {data} string - optional - UID of the scene. If not specified, current scene UID is used
